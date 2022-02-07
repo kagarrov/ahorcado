@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Ahorcado Game</title>
+  </head>
+  <body>
+
+    <form id="word-to-guess-form">
+      <label for="word to guess">Enter a word:</label>
+      <input id="word-to-guess" name="word-to-guess" type="text" />
+      <button type="submit">Start Game</button>
+    </form>
+
+    <div id="try-letter">
+      <form id="try-letter-form">
+          <label for="letter"> Enter a letter: </label>
+          <input id = 'letter' name= 'letter' type="text" maxlength="1">
+      </form>
+    </div>
+
+    <ul id="word-placeholders"></ul>
+
+    <div id="array-of-tries"></div>
+  </body>
+</html>
