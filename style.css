@@ -76,6 +76,7 @@ h1{
   background-color: rgba(232, 240, 239, 0.904);
   width: 60%;
   margin: 0 auto;
+  text-decoration: line-through;
 }
 
 #array-of-tries p{

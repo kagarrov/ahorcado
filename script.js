@@ -6,8 +6,9 @@ const wordPlaceholders = document.getElementById("word-placeholders");
 const arrayOfTries = document.getElementById("array-of-tries");
 const imageDisplay = document.getElementById("image");
 const imageElement = document.getElementById("image-element");
-const statusDisplay = document.getElementById('status');
-const btnStartAgain = document.getElementById('btn-start-again');
+const statusDisplay = document.getElementById("status");
+const btnStartAgain = document.getElementById("btn-start-again");
+const wordToGuessInput = document.getElementById('word-to-guess');
 
 formElement.addEventListener("submit", saveWordtoGuess);
 formTryLetter.addEventListener("submit", saveLetter);
@@ -83,7 +84,6 @@ function reviewLetterInWord(letterTry) {
     numberOfFailedTries = numberOfFailedTries + 1;
     checkMaxNumberOfFailedTries(numberOfFailedTries);
     imageElement.src = "/images/" + numberOfFailedTries + ".png";
-
   }
 
   checkWin(numberOfGuessedLetters);
@@ -95,7 +95,10 @@ function checkWin(numberOfGuessedLetters) {
     formTryLetter.style.display = "none";
     wordPlaceholders.style.display = "none";
     arrayOfTries.style.display = "none";
-    statusDisplay.firstElementChild.textContent = "You WON!!!"
+
+    statusDisplay.style.display = "block";
+    statusDisplay.firstElementChild.textContent = "You WON!!!";
+
     console.log(numberOfGuessedLetters);
     console.log("you won!");
   }
@@ -110,6 +113,17 @@ function checkMaxNumberOfFailedTries(numberOfFailedTries) {
   }
 }
 
-function startAgain(){
-  
+function startAgain() {
+  formElement.style.display = "flex";
+  formTryLetter.style.display = "none";
+  wordPlaceholders.style.display = "none";
+  arrayOfTries.style.display = "none";
+  statusDisplay.style.display = "none";
+  imageDisplay.style.display = "none";
+  wordToGuessString = [];
+  wordToGuessInput.value = "";
+  wordsEntered = [];
+  numberOfGuessedLetters = 0;
+  // let numberOfTries = 0;
+  numberOfFailedTries = 0;
 }

@@ -14,41 +14,38 @@
     />
     <title>Ahorcado Game</title>
   </head>
-  
-  <body>
 
+  <body>
     <header>
       <h1>AHORCADO</h1>
     </header>
 
     <main>
-
       <form id="word-to-guess-form">
         <label for="word-to-guess">Enter a word:</label>
         <input id="word-to-guess" name="word-to-guess" type="text" />
         <button type="submit" id="start-game-btn">Start Game</button>
       </form>
 
+      <div id="try-letter">
+        <form id="try-letter-form">
+          <label for="letter"> Enter a letter: </label>
+          <input id="letter" name="letter" type="text" maxlength="1" />
+        </form>
+      </div>
 
-        <div id="try-letter">
-          <form id="try-letter-form">
-            <label for="letter"> Enter a letter: </label>
-            <input id="letter" name="letter" type="text" maxlength="1" />
-          </form>
-        </div>
+      <ul id="word-placeholders"></ul>
 
-        <ul id="word-placeholders"></ul>
-  
-        <div id="array-of-tries"></div> 
-  
+      <div id="array-of-tries"></div>
+
       <div id="image">
         <img src="images/0.png" id="image-element" />
       </div>
-  
-      <div id= "status"></div>
-      <p></p>
-      <button id= 'btn-start-again'>Start Again</button>
+
+      <div id="status">
+        <p></p>
+        <button id="btn-start-again">Start Again</button>
+      </div>
     </main>
-  
   </body>
 </html>
