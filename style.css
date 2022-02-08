@@ -1,3 +1,99 @@
+body{
+  font-family: 'Architects Daughter', cursive;
+}
+
+h1{
+
+  font-size: 100px;
+  text-align: center;
+  margin-top: 0;
+  color: rgb(30,107,176);
+}
+
+#word-to-guess-form{
+  font-size: 50px;
+  color: rgb(19, 71, 116);
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#start-game-btn{
+  margin: 20px auto;
+  padding: 5px 10px;
+  background-color: rgb(252, 209, 18);
+  border-color: rgb(30,107,176);
+  color: rgb(19, 71, 116);
+}
+
+#start-game-btn:hover{
+  border-width: 4px;
+}
+
 #try-letter {
+  display: none;
+}
+
+#try-letter-form{
+  font-size: 50px;
+  color: rgb(19, 71, 116);
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#word-placeholders{
+  display: flex;
+  flex: row;
+  list-style: none;
+  justify-content: center;
+
+}
+#word-placeholders li{
+  font-size: 30px;
+  background-color: rgba(248, 213, 59, 0.404);
+  border-radius: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(252, 209, 18);
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  margin: 0px 10px;
+
+}
+
+#array-of-tries{
+  font-size: 30px;
+  display: flex;
+  flex: row;
+  list-style: none;
+  justify-content: center;
+  background-color: rgba(232, 240, 239, 0.904);
+  width: 60%;
+  margin: 0 auto;
+}
+
+#array-of-tries p{
+  padding: 0 4px;
+  margin: 0;
+}
+
+#image{
+  display: none;
+  max-width: 200px;
+  margin: 10px auto;
+}
+
+#image-element{
+  width: 100%;
+
+}
+
+#status{
   display: none;
 }

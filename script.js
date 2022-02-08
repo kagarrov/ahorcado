@@ -4,16 +4,21 @@ const formTryLetter = document.getElementById("try-letter-form");
 const letterInput = document.getElementById("letter");
 const wordPlaceholders = document.getElementById("word-placeholders");
 const arrayOfTries = document.getElementById("array-of-tries");
+const imageDisplay = document.getElementById("image");
+const imageElement = document.getElementById("image-element");
+const statusDisplay = document.getElementById('status');
+const btnStartAgain = document.getElementById('btn-start-again');
 
 formElement.addEventListener("submit", saveWordtoGuess);
 formTryLetter.addEventListener("submit", saveLetter);
+btnStartAgain.addEventListener("click", startAgain);
 
 let wordToGuessString;
 let wordsEntered = [];
 let numberOfGuessedLetters = 0;
 // let numberOfTries = 0;
 let numberOfFailedTries = 0;
-const maxNumberOfTries = 7;
+const maxNumberOfTries = 6;
 let isInWordEntered;
 
 function saveWordtoGuess(event) {
@@ -28,6 +33,7 @@ function saveWordtoGuess(event) {
 function createWordPlaceholders(wordToGuessString) {
   formElement.style.display = "none";
   displayTryLetter.style.display = "block";
+  imageDisplay.style.display = "block";
   for (const letter of wordToGuessString) {
     const letterPlaceholder = document.createElement("LI");
     // letterPlaceholder.textContent = letter;
@@ -76,6 +82,8 @@ function reviewLetterInWord(letterTry) {
   if (letterIsInTheWord == false) {
     numberOfFailedTries = numberOfFailedTries + 1;
     checkMaxNumberOfFailedTries(numberOfFailedTries);
+    imageElement.src = "/images/" + numberOfFailedTries + ".png";
+
   }
 
   checkWin(numberOfGuessedLetters);
@@ -83,9 +91,11 @@ function reviewLetterInWord(letterTry) {
 
 function checkWin(numberOfGuessedLetters) {
   if (numberOfGuessedLetters == wordToGuessString.length) {
-    formTryLetter.display = "none";
-    wordPlaceholders.display = "none";
-    arrayOfTries.display = "none";
+    imageDisplay.style.display = "none";
+    formTryLetter.style.display = "none";
+    wordPlaceholders.style.display = "none";
+    arrayOfTries.style.display = "none";
+    statusDisplay.firstElementChild.textContent = "You WON!!!"
     console.log(numberOfGuessedLetters);
     console.log("you won!");
   }
@@ -93,6 +103,13 @@ function checkWin(numberOfGuessedLetters) {
 
 function checkMaxNumberOfFailedTries(numberOfFailedTries) {
   if (numberOfFailedTries == maxNumberOfTries) {
+    formTryLetter.style.display = "none";
+    wordPlaceholders.style.display = "none";
+    arrayOfTries.style.display = "none";
     console.log("you lose");
   }
+}
+
+function startAgain(){
+  
 }
